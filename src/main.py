@@ -21,6 +21,5 @@ def main():
     lru.print_results()
     optff.print_results()
 
-
 if __name__ == "__main__":
     main()
