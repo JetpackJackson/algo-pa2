@@ -1,6 +1,16 @@
+.PHONY: all run init doc
 all:
-	./.venv/bin/python src/main.py
+	@echo "Commands:"
+	@echo "	run [file]:	runs the code (with an optional input file)"
+	@echo "	init:		setup the Python env"
+	@echo "	doc:		compile the README pdf"
+
+run: ARGS = $(filter-out $@,$(MAKECMDGOALS))
+run:
+	./.venv/bin/python src/main.py $(ARGS)
 
 init:
 	python -m venv .venv
-	./.venv/bin/pip install -r requirements.txt
+
+doc:
+	pandoc -N README.md -o README.pdf --pdf-engine lualatex
