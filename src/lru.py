@@ -1,6 +1,7 @@
 import main
 from collections import OrderedDict
 
+
 def lru(k, requests):
     cache = OrderedDict()
     misses = 0
@@ -13,6 +14,7 @@ def lru(k, requests):
                 cache.popitem(last=False)
             cache[r] = True
     return misses
+
 
 def print_results(k, r):
     print(f"LRU   : {lru(k,r)}")

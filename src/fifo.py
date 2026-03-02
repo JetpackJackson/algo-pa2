@@ -1,6 +1,7 @@
 import main
 from collections import deque
 
+
 def fifo(k, req):
     cache = set()
     order = deque()
@@ -16,6 +17,7 @@ def fifo(k, req):
             cache.add(r)
             order.append(r)
     return misses
+
 
 def print_results(k, r):
     print(f"FIFO  : {fifo(k,r)}")
