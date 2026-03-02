@@ -18,8 +18,7 @@ def fifo(k, req):
     return misses
 
 def print_results(k, r):
-    fifo_result = fifo(k,r)
-    print(f"FIFO  : {fifo_result}")
+    print(f"FIFO  : {fifo(k,r)}")
 
 
 if __name__ == "__main__":

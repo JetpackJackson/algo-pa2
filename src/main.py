@@ -18,7 +18,7 @@ def main():
         r = list(map(int, input("r_1 ... r_m:").split()))
 # test comment so github can push
     fifo.print_results(k, r)
-    lru.print_results()
+    lru.print_results(k, r)
     optff.print_results()
 
 if __name__ == "__main__":
