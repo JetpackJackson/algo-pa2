@@ -2,10 +2,10 @@ import main
 from collections import OrderedDict
 
 
-def lru(k, requests):
+def lru(k, req):
     cache = OrderedDict()
     misses = 0
-    for r in requests:
+    for r in req:
         if r in cache:
             cache.move_to_end(r)
         else:

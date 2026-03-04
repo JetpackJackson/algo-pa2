@@ -22,5 +22,31 @@ papersize: letter
 
 # Written Component
 
+### Question 1.
+
+sample1.txt: <br>
+&emsp; k = 4, m = 50 <br>
+&emsp; FIFO = 4 <br>
+&emsp; LRU = 4 <br>
+&emsp; OPTFF = 4 <br>
+sample2.txt: <br>
+&emsp; k = 5, m = 55 <br>
+&emsp; FIFO = 35 <br>
+&emsp; LRU = 34 <br>
+&emsp; OPTFF = 22 <br>
+sample3.txt: <br>
+&emsp; k = 6, m = 60 <br>
+&emsp; FIFO = 60 <br>
+&emsp; LRU = 60 <br>
+&emsp; OPTFF = 55 <br>
+
+OPTFF was by far the most efficient out of the three. 
+Whereas all three algorithms got the same result for the first test (due to the consistent repetition),
+In the second and third tests, the OPTFF outperformed both FIFO and LRU, especially in the second test significantly.
+<br>
+<br>
+As for FIFO compared to LRU, they both did about the same, although in the second test LRU had one less miss than FIFO.
+
+### Question 2.
 
 
