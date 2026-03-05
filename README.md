@@ -54,7 +54,29 @@ For ( k = 3 ), investigate whether there exists a request sequence for which OPT
 - If you believe no such sequence exists for the policy you chose:
 	- Provide a clear justification.
 
+- **Answer**: The sequence is provided in `assets/q2.txt`. It has k = 3, m = 7, and is the sequence 1 2 3 4 1 2 4.
+
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+Input File & k  & m   & FIFO  & LRU & OPTFF \\ \hline
+q2         & 3  & 7   & 6     &  6  & 4     \\ \hline
+\end{tabular}
+
 In either case, briefly explain your reasoning.
+
+- **Answer**: The sequence is constructed such that LRU eventually evicts 1 at the same step that OPTFF evicts 3, which has a cascading effect for LRU where it retains the "wrong" values. This results in OPTFF having strictly fewer misses.
+
+\begin{tabular}{|l|l|l|}
+\hline
+Step & OPTFF                          & LRU                           \\ \hline
+1    & (empty) to A                   & (empty) to A                  \\ \hline
+2    & A to AB                        & A to AB                       \\ \hline
+3    & AB to ABC                      & AB to ABC                     \\ \hline
+4    & ABC to \textcolor{blue}{ABD}   & ABC to \textcolor{red}{BCD}   \\ \hline
+5    & ABD to ABD (hit)               & BCD to CDA                    \\ \hline
+6    & ABD to ABD (hit)               & CDA to DAB                    \\ \hline
+7    & ABD to ABD (hit)               & DAB to DAB (hit)              \\ \hline
+\end{tabular}
 
 ## Question 3: Prove OPTFF is Optimal
 
@@ -64,3 +86,4 @@ Let ( A ) be any offline algorithm that knows the full request sequence.
 
 Prove that the number of misses of OPTFF is no larger than that of ( A ) on any fixed sequence.
 
+- **Answer**:
