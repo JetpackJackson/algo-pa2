@@ -3,7 +3,7 @@ title: COP4533 - Programming Assignment 2
 author:
 - 'Bailey Watkins (UFID: 97706540)'
 - 'Patrick McCormack (UFID: 73709580)'
-date: 3/5/2026
+date: 3/6/2026
 documentclass: article
 geometry: margin=1in
 papersize: letter
@@ -86,4 +86,4 @@ Let ( A ) be any offline algorithm that knows the full request sequence.
 
 Prove that the number of misses of OPTFF is no larger than that of ( A ) on any fixed sequence.
 
-- **Answer**:
+- **Answer**: The way that OPTFF operates means that it can "see the future" and sets aside cache items better than FIFO or LRU (see above) so by definition, OPTFF cannot miss more than an algorithm that knows the sequence.
